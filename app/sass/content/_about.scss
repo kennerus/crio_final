@@ -1,0 +1,89 @@
+.about {
+	min-height: 760px;
+	background-color: #00aeff;
+	background: url(../img/circle-about.png) right bottom no-repeat,
+				linear-gradient(-40deg, #01ceff 0%, #007aff 100%);
+	.container {
+		min-height: 760px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		@include breakpoint(max-width 1200px) {
+			justify-content: center;
+		}
+
+		.about__pros,
+		.about__describe {
+			max-width: calc(1170px / 2);
+			width: 100%;
+			&>div {
+				width: 100%;
+			}
+			p {
+				line-height: 20px;
+				color: white;
+				strong {
+					font-family: 'Gotham-Med', sans-serif;
+				}
+			}
+		}
+
+		.about__pros {
+			position: relative;
+			height: 100%;
+			p {
+				position: absolute;
+				text-align: right;
+				margin-top: 5px;
+				@include breakpoint(max-width 400px) {
+					display: none;
+				}
+				&:first-child {
+					top: 8%;
+					left: 20%;
+					@include breakpoint(max-width 890px) {
+						top: 7%;
+						left: 9%;
+					}
+
+					@include breakpoint(max-width 600px) {
+						top: 0;
+					}
+				}
+				&:nth-child(2) {
+					width: 190px;
+					top: 56%;
+					left: 7%;
+					@include breakpoint(max-width 890px) {
+						left: 2%;
+					}
+
+					@include breakpoint(max-width 600px) {
+						width: 30vw;
+						left: 0;
+					}
+				}
+
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.about__describe {
+			max-width: 510px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			h2 {
+				margin: 20px 0;
+				color: white;
+				@include title
+			}
+		}
+	}
+}

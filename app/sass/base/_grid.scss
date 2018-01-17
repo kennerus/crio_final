@@ -1,0 +1,42 @@
+.container {
+    box-sizing: border-box;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+
+
+@media (max-width: 991px) {
+    .container {
+        width: 95vw;
+        padding: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 90vw;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 990px;
+        padding: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}

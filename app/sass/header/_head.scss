@@ -1,0 +1,237 @@
+.header {
+	background-image:	url(../img/circle-bg-head.png);
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: 90% 0;
+	.container {
+		.header__best {
+			display: flex;
+			flex-direction: column;
+			@include breakpoint(max-width 1200px) {
+				padding-top: 45px;
+			}
+
+			@include breakpoint(max-width 768px) {
+				text-align: center;
+			}
+
+			@include breakpoint(max-width 400px) {
+				padding-top: 85px;
+			}
+
+			.header__call-order {
+				margin-bottom: 60px;
+				align-self: flex-end;
+				@include breakpoint(max-width 1200px) {
+					margin: 0;
+				}
+
+				@include breakpoint(max-width 400px) {
+					align-self: flex-start;
+				}
+			}
+
+			.header__describe {
+				display: flex;
+				justify-content: space-between;
+				@include breakpoint(max-width 1200px) {
+					justify-content: center;
+					flex-wrap: wrap;
+				}
+				.header__best-text {
+					max-width: 680px;
+					width: 95vw;
+					display: flex;
+					flex-direction: column;
+					h1 {
+						margin-bottom: 30px;
+						font-family: 'Gilroy-Extrabold', sans-serif;
+						font-weight: normal;
+						font-size: 44px;
+						text-transform: uppercase;
+						color: #2c2c2c;
+						line-height: 55px;
+					}
+
+					p {
+						margin: 0;
+						font-size: 20px;
+						line-height: 28px;
+					}
+				}
+
+				.header__best-form {
+					h2 {
+						margin-bottom: 5px;
+						font-family: 'Gotham-Bold', sans-serif;
+						font-weight: normal;
+						font-size: 22px;
+						color: #f12424;
+						line-height: 1.2;
+						text-transform: uppercase;
+					}
+
+					p {
+						margin-bottom: 35px;
+						font-family: 'Gotham-Light', sans-serif;
+						font-size: 16px;
+						@include breakpoint(max-width 1200px) {
+							margin-bottom: 20px;
+						}
+					}
+
+					#form {
+						div {
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							@include breakpoint(max-width 1200px) {
+								justify-content: flex-start;
+							}
+							@include breakpoint(max-width 768px) {
+								justify-content: center;
+								flex-wrap: wrap;
+							}
+						}
+
+						div:first-child {
+							margin-bottom: 30px;
+
+							input {
+								width: 170px;
+								margin: 10px 0;
+								padding: 12px 0 12px 20px;
+								border-radius: 20px;
+								box-shadow: 0 0 13px rgba(0, 126, 255, 0.25);
+								background-color: #f7f8f9;
+								font-size: 13px;
+								color: #9ea2a1;
+								border: 1px solid #d0d0d0;
+							}
+
+							#name, #email {
+								margin-right: 10px;
+
+								@include breakpoint(max-width 476px) {
+									margin-right: 0;
+								}
+							}
+
+							/*#tel {
+								width: 230px;
+							}*/
+						}
+
+						.checkbox {
+							.agree {
+								display: none;
+							}
+							.checkbox-custom {
+								position: relative;      /* Обязательно задаем, чтобы мы могли абсолютным образом позиционировать псевдоэлемент внютри нашего кастомного чекбокса */
+							    width: 18px;             /* Обязательно задаем ширину */
+							    height: 18px;            /* Обязательно задаем высоту */
+							    border: 1px solid #cfcece;
+								border-radius: 50%;
+								cursor: pointer;
+								box-sizing: border-box;
+							}
+
+							.checkbox-custom,
+							.label {
+							    display: inline-block;
+							    vertical-align: middle;
+							    cursor: pointer;
+							}
+
+							.label {
+								@include breakpoint(max-width 576px) {
+									max-width: 200px;
+								}
+							}
+
+							label {
+								display: flex;
+								align-items: center;
+								span {
+									margin: 2px;
+								}
+							}
+
+							.agree:checked + .checkbox-custom::before {
+								width: 10px;
+								height: 10px;
+							    content: "";             /* Добавляем наш псевдоэлемент */
+							    display: block;          /* Делаем его блочным элементом */
+							    position: absolute;      /* Позиционируем его абсолютным образом */
+							    /* Задаем расстояние от верхней, правой, нижней и левой границы */
+							    top: 3px;
+							    right: 3px;
+							    background: #f02a27;     /* Добавляем фон. Если требуется, можете поставить сюда картинку в виде "галочки", которая будет символизировать, что чекбокс отмечен */
+							    border-radius: 50%;
+							}
+
+							.agree:hover + .checkbox-custom::before {
+								width: 10px;
+								height: 10px;
+							    content: "";             /* Добавляем наш псевдоэлемент */
+							    display: block;          /* Делаем его блочным элементом */
+							    position: absolute;      /* Позиционируем его абсолютным образом */
+							    /* Задаем расстояние от верхней, правой, нижней и левой границы */
+							    top: 3px;
+							    right: 3px;
+							    background: #f02a27;     /* Добавляем фон. Если требуется, можете поставить сюда картинку в виде "галочки", которая будет символизировать, что чекбокс отмечен */
+							    border-radius: 50%;
+							    opacity: 0.5;
+							}
+
+							#submit {
+								width: 205px;
+								margin: 5px;
+								padding: 15px 0 11px;
+								font-family: 'Gotham-Bold';
+								font-size: 10px;
+								background-color: #f02a27;
+								color: #FFF;
+								border: 1px solid #f02a27;
+								cursor: pointer;
+								border-radius: 20px;
+								box-shadow: 5px 6px 12px rgba(241, 36, 36, 0.31);
+								text-transform: uppercase;
+								transition: all 0.2s;
+								&:hover {
+									background-color: transparent;
+									color: #f02a27;
+									transition: all 0.2s;
+								}
+							}
+						}
+					}
+				}
+
+				.header__best-crio {
+					min-height: 600px;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					align-items: center;
+					& > img {
+						width: 100%;
+					}
+
+					a {
+						display: flex;
+						align-items: center;
+						font-size: 14px;
+						color: #a3a4a4;
+						&:hover, &:active, &:focus {
+							text-decoration: underline;
+						}
+						img {
+							margin: 0 5px 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

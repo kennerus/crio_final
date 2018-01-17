@@ -1,0 +1,250 @@
+.calculate {
+	min-height: 1030px;
+	background-color: #efeff0;
+	background-image: url(../img/circle-cost.png);
+	background-repeat: no-repeat;
+	background-position-y: 85%;
+	color: #2c2c2c;
+	.container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		@include breakpoint(max-width 1024px){
+			width: 100%;
+		}
+		.calculate__title {
+			margin: 70px 25px 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			flex-wrap: wrap;
+			h2 {
+				margin: 0;
+				font-family: 'Gilroy-Extrabold', sans-serif;
+				font-weight: normal;
+				font-size: 44px;
+				text-transform: uppercase;
+				@include breakpoint(max-width 900px) {
+					font-size: 10vw;
+				}
+			}
+
+			p {
+				margin-right: 50px;
+				font-family: 'Gilroy-Regular', sans-serif;
+				text-align: right;
+				font-size: 14px;
+				line-height: 18px;
+				@include breakpoint(max-width 1024px) {
+					text-align: left;
+					margin-right: 10px;
+				}
+			}
+		}
+
+		.calculate__table {
+			max-width: 1100px;
+			height: auto;
+			background-color: white;
+			box-shadow: 12px 18px 25px rgba(0, 0, 0, 0.17);
+			.table {
+				max-width: 100%;
+				padding: 40px 0 40px 50px;
+				th, td {
+					padding: 7px 30px 7px 0px;
+					font-weight: normal;
+					border: none;
+				}
+
+				th:first-child, td:first-child {
+					padding-right: 60px;
+				}
+
+				th:last-child, td:last-child {
+					padding-right: 20px;
+				}
+
+				@include breakpoint(max-width 992px) {
+					height: auto;
+					padding: 20px;
+					display: flex;
+					overflow: hidden;
+					background: none;
+					vertical-align: top;
+	  				overflow-x: auto;
+	  				white-space: nowrap;
+					border-collapse: collapse;
+					border-spacing: 0;
+
+					th:first-child, td:first-child {
+						padding-right: 20px;
+					}
+
+					td:first-child,
+					tbody tr:first-child {
+						background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+						background-repeat: no-repeat;
+						background-size: 20px 100%;
+					}
+
+					td:last-child,
+					tbody tr:last-child {
+					    background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+						background-repeat: no-repeat;
+						background-position: 100% 0;
+						background-size: 20px 100%;
+					}
+
+					thead {
+						display: flex;
+						flex-shrink: 0;
+						min-width: min-content;
+					}
+
+					tbody {
+						display: flex;
+						position: relative;
+						overflow-x: auto;
+						overflow-y: hidden;
+						// optional - enable iOS momentum scrolling
+						-webkit-overflow-scrolling: touch;
+  
+						// scrolling shadows
+						background: radial-gradient(left, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 0 center,
+						            radial-gradient(right, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 100% center;
+						background-size: 10px 100%, 10px 100%;
+						background-attachment: scroll, scroll;
+						background-repeat: no-repeat;
+					}
+
+					tr {
+						display: flex;
+						flex-direction: column;
+						min-width: min-content;
+						flex-shrink: 0;
+					}
+
+					th, td {
+						display: block;
+						padding: 7px 0;
+					}
+
+					th:last-child, td:last-child {
+						padding-right: 0;
+					}
+
+					td {
+						background-image: none !important;
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		.calculate__crio-key {
+			@include breakpoint(max-width 1200px) {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+			}
+			.calculate__key-title {
+				max-width: 390px;
+				width: 95vw;
+				position: relative;
+				left: 15%;
+				@include breakpoint(max-width 1200px) {
+					left: 0;
+				}
+				h2{
+					margin: 60px 0 30px 50px;
+					@include title
+				}
+
+				p {
+					line-height: 25px;
+				}
+			}
+
+			.calculate__form {
+				bottom: -10%;
+				@include breakpoint(max-width 1200px) {
+					bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+.efficiency {
+	margin: 25px 0 40px;
+	background-color: white;
+	color: #2c2c2c;
+	.container {
+		position: relative;
+		h5 {
+			position: relative;
+			left: 15%;
+			max-width: 375px;
+			font-family: 'Myriad', sans-serif;
+			font-size: 20px;
+			font-weight: 700;
+			line-height: 25px;
+			@include breakpoint (max-width 992px) {
+				left: 0;
+			}
+		}
+
+		.efficiency__slider {
+			margin: 90px 0;
+			@include breakpoint(max-width 1024px) {
+				margin: 40px 0 70px;
+			}
+			.slide {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				iframe {
+					@include breakpoint(max-width 576px) {
+						width: 100%;
+					}
+				}
+				div {
+					width: 45%;
+					margin-left: 5px;
+					@include breakpoint(max-width 576px) {
+						display: none;
+					}
+					h2 {
+						margin: 0 0 20px;
+						font-family: 'Gotham-Bold', sans-serif;
+						font-weight: normal;
+						font-size: 34px;
+						line-height: 40px;
+						@include breakpoint(max-width 1200px) {
+							font-size: 2rem;
+							line-height: 1.2;
+							margin: 0 0 5px;
+						}
+
+						@include breakpoint(max-width 768px) {
+							font-size: 24px;
+						}
+					}
+
+					p {
+						font-size: 19px;
+						line-height: 25px;
+						@include breakpoint(max-width 1024px) {
+							font-size: 2vw;
+							margin: 8px;
+						}
+						@include breakpoint(max-width 768px) {
+							font-size: 15px;
+							line-height: 1.3;
+						}
+					}
+				}
+			}
+		}
+	}
+}
