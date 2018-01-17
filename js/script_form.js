@@ -73,7 +73,7 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 			alert('Вы не заполнили все поля!');
 		}
 	});
-	$(document).on('click', '.overlay', function(e){
+	$(document).on('click', '.overlay, .message__close', function(e){
 		e.preventDefault();
 		$('#message').hide();
 	});
