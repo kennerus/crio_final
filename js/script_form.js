@@ -73,12 +73,18 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 			alert('Вы не заполнили все поля!');
 		}
 	});
-	$(document).on('click', '.overlay, .message__close', function(e){
+	$(document).on('click', '.message__close', function(e){
 		e.preventDefault();
 		$('#message').hide();
 	});
 
 });
+
+function closeModal() {
+	var message = document.getElementById('message');
+	message.style.display = 'none';
+
+}
 
 jQuery(function($){
 	$("#phone").mask("+9(999) 999-99-99");
